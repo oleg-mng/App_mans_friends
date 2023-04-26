@@ -12,12 +12,20 @@ public abstract class MansFriend {
         this.name = name;
         this.bornDate = bornDate;
     }
-    public static void addNewAnimal(int id, String name, LocalDate bornDate) {
+    public MansFriend() {
+
+    }
+    public void addNewAnimal(int id, String name, LocalDate bornDate) {
 //        System.out.println("Get add new toy...");
-        Cat cat = new Cat(id, name, bornDate);
-        System.out.println(cat.getInfo());
+        MansFriend anyAnimal = new MansFriend(id, name, bornDate) {
+            @Override
+            public void addNewAnimal(int id, String name, LocalDate bornDate) {
+                super.addNewAnimal(id, name, bornDate);
+            }
+        };
+        System.out.println(anyAnimal.getInfo());
     }
     public String getInfo() {
-        return String.format("id: %d   name: %s   name: %d  ", id, name.getClass().getSimpleName());
+        return String.format("id: %d   name: %s   date: %s", id, name, bornDate);
     }
 }
