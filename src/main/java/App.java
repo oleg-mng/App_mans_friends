@@ -21,11 +21,15 @@ public class App {
         System.out.println("Введены данные по следующим животным:");
         AddAnimal.printList(arrayAnimal);
 
-//        View.getNewValue();
+        /**
+         *
+         */
+        View.getNewValue();
 
-        ComandForAnimal.addComandInMap(i++, View.getNewValue());
-        ComandForAnimal.getHmpCom();
+//        ComandForAnimal.addComandInMap(i++, View.getNewValue());
+//        ComandForAnimal.getHmpCom();
 
+//        System.out.println(View.getNumber());
 
     }
 }
