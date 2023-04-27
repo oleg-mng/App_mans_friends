@@ -16,7 +16,7 @@ public abstract class MansFriend {
 
     }
     public void addNewAnimal(int id, String name, LocalDate bornDate) {
-//        System.out.println("Get add new toy...");
+
         MansFriend anyAnimal = new MansFriend(id, name, bornDate) {
             @Override
             public void addNewAnimal(int id, String name, LocalDate bornDate) {
