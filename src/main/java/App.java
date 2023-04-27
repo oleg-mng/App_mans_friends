@@ -19,6 +19,7 @@ public class App {
         System.out.println("Введены данные по следующим животным:");
         AddAnimal.printList(arrayAnimal);
 
+        ComandForAnimal.addMap();
         ComandForAnimal.getHmpCom();
 
 
