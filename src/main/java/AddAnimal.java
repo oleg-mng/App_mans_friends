@@ -1,29 +1,28 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class AddAnimal {
-    private static String species;
 
-    public static ArrayList<Pet> addSomePetAnimal(List<Pet> arrayAnimal, int id, String name, LocalDate bornDate) {
+    public static ArrayList<MansFriend> addSomePetAnimal(List<MansFriend> arrayAnimal, int id, String name,
+                                                         LocalDate bornDate, String species, int numberAnimal) {
 
-        arrayAnimal.add(new Pet(id, name, bornDate, species));
-        return (ArrayList<Pet>) arrayAnimal;
+        if (species == "pet" && numberAnimal == 1) arrayAnimal.add(new Cat(id, name, bornDate, species));
+        else if (species == "pet" && numberAnimal == 2) arrayAnimal.add(new Dog(id, name, bornDate, species));
+        else if (species == "pet" && numberAnimal == 3) arrayAnimal.add(new Hamster(id, name, bornDate, species));
+        else if (species == "pack" && numberAnimal == 4) arrayAnimal.add(new Horse(id, name, bornDate, species));
+        else if (species == "pack" && numberAnimal == 5) arrayAnimal.add(new Camel(id, name, bornDate, species));
+        else if (species == "pack" && numberAnimal == 6) arrayAnimal.add(new Donkey(id, name, bornDate, species));
+        else {
+            System.out.println(id +"=id, по данному животному введите корректные параметры species: 'pet' или 'pack' и numberAnimal: 1...6");
+        }
+        return (ArrayList<MansFriend>) arrayAnimal;
     }
-    public static void printList(List<Pet> arrayAnimal) {
-        for (Pet pet : arrayAnimal) {
-            System.out.println(pet.getInfo());
+    public static void printList(List<MansFriend> arrayAnimal) {
+        for (MansFriend animal : arrayAnimal) {
+            System.out.println(animal.getInfo());
         }
     }
 }
 
-//    public void addNewAnimal(int id, String name, LocalDate bornDate) {
-//
-//        MansFriend anyAnimal = new MansFriend(id, name, bornDate) {
-//            @Override
-//            public void addNewAnimal(int id, String name, LocalDate bornDate) {
-//                super.addNewAnimal(id, name, bornDate);
-//            }
-//        };
-//        System.out.println(anyAnimal.getInfo());
-//    }

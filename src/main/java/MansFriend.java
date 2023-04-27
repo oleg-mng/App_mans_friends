@@ -4,7 +4,6 @@ import java.util.Date;
 public abstract class MansFriend {
     int id;
     String name;
-//    Date bornDate;
     LocalDate bornDate;
 
     public MansFriend(int id, String name, LocalDate bornDate) {
