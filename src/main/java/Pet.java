@@ -1,22 +1,23 @@
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Pet extends MansFriend{
 
-    private String place;
+    private String species;
 
-    public Pet(int id, String name, LocalDate bornDate, String place) {
+    public Pet(int id, String name, LocalDate bornDate, String species) {
         super(id, name, bornDate);
-        this.place = place;
+        this.species = species;
     }
 
-    public String getPlace() {
-        return place;
+    public String getSpecies() {
+        return species;
     }
 
     @Override
     public String getInfo() {
         super.getInfo();
-        return String.format("id: %d   name: %s   date: %s   place: %s", id, name, bornDate, place);
+        return String.format("id: %d   name: %s   date: %s   species: %s  class: %s", id, name, bornDate, species, getClass().getSimpleName());
     }
+
+
 }
