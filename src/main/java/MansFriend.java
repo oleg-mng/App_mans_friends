@@ -14,16 +14,7 @@ public abstract class MansFriend {
     public MansFriend() {
 
     }
-//    public void addNewAnimal(int id, String name, LocalDate bornDate) {
-//
-//        MansFriend anyAnimal = new MansFriend(id, name, bornDate) {
-//            @Override
-//            public void addNewAnimal(int id, String name, LocalDate bornDate) {
-//                super.addNewAnimal(id, name, bornDate);
-//            }
-//        };
-//        System.out.println(anyAnimal.getInfo());
-//    }
+
     public String getInfo() {
         return String.format("id: %d   name: %s   date: %s", id, name, bornDate);
     }

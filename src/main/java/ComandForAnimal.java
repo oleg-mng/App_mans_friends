@@ -5,6 +5,7 @@ class ComandForAnimal {
     int n;
     int com;
     static java.util.Map<Integer, String> hmpCom = new HashMap<>();
+
     public static Map<Integer, String> getHmpCom() {
         hmpCom.put(1, "go");
         hmpCom.put(2, "stop");
@@ -20,11 +21,12 @@ class ComandForAnimal {
 //        }
         return hmpCom;
     }
-    public Map<Integer, String> addSomeComand(Map<Integer, String> hmpCom, int com){
+
+    public Map<Integer, String> addSomeComand(Map<Integer, String> hmpCom, int com) {
         return hmpCom;
     }
 
-    public static void addMap() {
+    public static void addComandInMap(int q, String qv) {
         hmpCom.put(1, "go");
         hmpCom.put(2, "stop");
         hmpCom.put(3, "run");
@@ -32,14 +34,16 @@ class ComandForAnimal {
         hmpCom.put(5, "lie");
         hmpCom.put(6, "jump");
         hmpCom.put(7, "come up");
+        if (!hmpCom.containsKey(q)) hmpCom.putIfAbsent(q, qv);
+        else System.out.println("Данный номер #" + q +"уже занят, - введите альтенативный номер и команду");
 
-        System.out.println("Список доступных команд: ");
+        System.out.println("Текущий писок доступных команд: ");
         for (java.util.Map.Entry<Integer, String> entry : hmpCom.entrySet()) {
             System.out.println(entry);
         }
     }
 
-    public void searchComand (int n) {
+    public void searchComand(int n) {
         System.out.println(hmpCom.get(n));
     }
 }
