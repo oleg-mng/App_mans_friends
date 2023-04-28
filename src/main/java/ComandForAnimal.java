@@ -37,7 +37,7 @@ class ComandForAnimal {
         if (!hmpCom.containsKey(q)) hmpCom.putIfAbsent(q, qv);
         else System.out.println("Данный номер #" + q +" уже занят, - введите альтенативный номер и команду");
 
-        System.out.println("Текущий писок доступных команд: ");
+        System.out.println("Текущий список доступных команд: ");
         for (java.util.Map.Entry<Integer, String> entry : hmpCom.entrySet()) {
             System.out.println(entry);
         }

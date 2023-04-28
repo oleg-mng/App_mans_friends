@@ -1,21 +1,23 @@
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.Locale;
+import java.util.*;
 
 public class PackAnimal extends MansFriend{
 
     private String species;
+    public ArrayList<Integer> cm;
 
-    public PackAnimal(int id, String name, LocalDate bornDate, String species) {
+    public PackAnimal(int id, String name, LocalDate bornDate, String species, ArrayList<Integer> cm) {
         super(id, name, bornDate);
         this.species = species;
+        this.cm = cm;
     }
+
     public String getSpecies() {
         return species;
     }
     @Override
     public String getInfo() {
         super.getInfo();
-        return String.format("id: %d   name: %s   date: %s   species: %s  class: %s", id, name, bornDate, species, getClass().getSimpleName());
+        return String.format("id: %d   name: %s   date: %s   species: %s  class: %s commands: %s ", id, name, bornDate, species, cm, getClass().getSimpleName());
     }
 }
