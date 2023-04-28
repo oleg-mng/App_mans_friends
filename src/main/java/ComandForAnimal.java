@@ -15,10 +15,10 @@ class ComandForAnimal {
         hmpCom.put(6, "jump");
         hmpCom.put(7, "come up");
 
-//        System.out.println("Список доступных команд: ");
-//        for (java.util.Map.Entry<Integer, String> entry : hmpCom.entrySet()) {
-//            System.out.println(entry);
-//        }
+        System.out.println("Текущий список доступных команд: ");
+        for (java.util.Map.Entry<Integer, String> entry : hmpCom.entrySet()) {
+            System.out.println(entry);
+        }
         return hmpCom;
     }
 
