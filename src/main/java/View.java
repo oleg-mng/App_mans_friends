@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class View {
@@ -33,12 +34,14 @@ public class View {
             ad = in.nextLine();
         }
 
-        if (ad.equals("y") || ad.equals("Y") || ad.equals("")) {
+        if (ad.equals("y") || ad.equals("") || ad.equals("Y")) {
             System.out.println("Введите id животного: ");
-            String studyId = null;
-            if (in.hasNextLine()) {
-                studyId = in.nextLine();
+            int studyId = 0;
+            if (in.hasNextInt()) {
+                studyId = in.nextInt();
             }
+            System.out.println("Вот его параметры: ");
+            Controller.searchAnimalOnId(Controller.choice(),studyId);
         }
 
         in.close();

@@ -32,5 +32,10 @@ public class AddAnimal {
             System.out.println(animal.getInfo());
         }
     }
+//    public static void printAnimal(List<MansFriend> arrayAnimal, int study) {
+//        for (MansFriend animal : arrayAnimal) {
+//            if (animal.id == study) System.out.println(animal.getInfo());
+//        }
+//    }
 }
 
