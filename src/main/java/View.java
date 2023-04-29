@@ -16,9 +16,9 @@ public class View {
 
         if (r.equals("y") || r.equals("") || r.equals("Y")) {
             System.out.println("Введите value команды, которую хотите добавить: ");
-            String val = null;
-            if (in.hasNextLine()) {
-                val = in.nextLine();
+            String val = "";
+            if (in.hasNext()) {
+                val = in.next();
             }
 
             System.out.println("Введите id команды, которую хотите добавить: ");
@@ -30,9 +30,9 @@ public class View {
 
         System.out.println("Хотите обучить животное новой команде? (Y/n) :  ");
 
-        String ad = null;
-        if (in.hasNextLine()) {
-            ad = in.nextLine();
+        String ad = "";
+        if (in.hasNext()) {
+            ad = in.next();
         }
 
         if (ad.equals("y") || ad.equals("") || ad.equals("Y")) {
@@ -53,9 +53,10 @@ public class View {
         }
 
         System.out.println("Сегодня мы можем добавить новое животное. Интересно? (Y/n) :  ");
-        String anm = null;
-        if (in.hasNextLine()) {
-            anm = in.nextLine();
+        String anm = "";
+        if (in.hasNext()) {
+            anm = in.next();
+        }
 
             if (anm.equals("y") || anm.equals("") || anm.equals("Y")) {
                 System.out.println("Введите id нового животного: ");
@@ -89,15 +90,20 @@ public class View {
                 if (in.hasNext()) {
                     cla = in.next();
                 }
+                System.out.println("Введите команду, которую знает питомец: ");
+                int cd = 0;
+                if (in.hasNextInt()) {
+                    cd = in.nextInt();
+                }
 
                 Controller.choice();
                 ArrayList<PackAnimal> dl = AddAnimal.addSomePetAnimal(Controller.choice(),anmId, anmName, LocalDate.of(year, month, day),
-                        cla, 5, new ArrayList<>(Arrays.asList(6, 6, 6)));
+                        cla, 5, new ArrayList<>(Arrays.asList(cd)));
                 System.out.println("Новое животное добавлено:");
                 AddAnimal.printList(dl);
                 Controller.searchAnimalOnId(Controller.choice(), anmId);
             }
-        }
+
         System.out.println("Exit");
 
         in.close();

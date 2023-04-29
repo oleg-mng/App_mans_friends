@@ -14,11 +14,11 @@ class ComandForAnimal {
         hmpCom.put(5, "lie");
         hmpCom.put(6, "jump");
         hmpCom.put(7, "come up");
-//
-//        System.out.println("Текущий список доступных команд: ");
-//        for (java.util.Map.Entry<Integer, String> entry : hmpCom.entrySet()) {
-//            System.out.println(entry);
-//        }
+
+        System.out.println("Текущий список доступных команд: ");
+        for (java.util.Map.Entry<Integer, String> entry : hmpCom.entrySet()) {
+            System.out.println(entry);
+        }
         return hmpCom;
     }
 
@@ -27,7 +27,7 @@ class ComandForAnimal {
     }
 
     public static void addComandInMap(int q, String qv) {
-        getHmpCom();
+//        getHmpCom();
         if (!hmpCom.containsKey(q)) hmpCom.putIfAbsent(q, qv);
         else System.out.println("Данный номер #" + q +" уже занят, - введите альтенативный номер и команду");
 
