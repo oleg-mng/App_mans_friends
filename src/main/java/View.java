@@ -4,11 +4,9 @@ import java.util.Scanner;
 public class View {
 
     public static void getNewValue() {
-        String r = "";
-
         Scanner in = new Scanner(System.in);
-
         System.out.println("Хотите добавить команду в базу? (Y/n) : ");
+        String r = null;
 
         if (in.hasNextLine()) {
             r = in.nextLine();
@@ -25,7 +23,7 @@ public class View {
             int n = in.nextInt();
 
             ComandForAnimal.addComandInMap(n, val);
-            ComandForAnimal.getHmpCom();
+//            ComandForAnimal.getHmpCom();
         }
 
         System.out.println("Хотите обучить животное новой команде? (Y/n) :  ");
@@ -51,9 +49,26 @@ public class View {
             }
             Controller.searchAndAddCommand(Controller.choice(), studyId, nw);
         }
+        System.out.println("Сегодня мы можем добавить новое животное. Интересно? (Y/n) :  ");
+        String anm = null;
+        if (in.hasNextLine()) {
+            anm = in.nextLine();
+
+            if (anm.equals("y") || anm.equals("") || anm.equals("Y")) {
+                System.out.println("Введите id нового животного: ");
+                int anmId = 0;
+                if (in.hasNextInt()) {
+                    anmId = in.nextInt();
+                }
+                System.out.println("Введите name нового животного:  ");
+                String anmName = null;
+                if (in.hasNextLine()) {
+                    anmName = in.nextLine();
+                }
+            }
+        }
 
         in.close();
-
     }
 }
 
