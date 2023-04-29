@@ -20,7 +20,7 @@ public class Pet extends MansFriend{
     @Override
     public String getInfo() {
         super.getInfo();
-        return String.format("id: %d   name: %s   date: %s   species: %s  class: %s commands: %s",
+        return String.format("id: %d   name: %s   date: %s   species: %s  class: %s  commands: %s",
                 id, name, bornDate, species, getClass().getSimpleName(), cm);
     }
 }

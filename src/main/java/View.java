@@ -29,6 +29,7 @@ public class View {
         }
 
         System.out.println("Хотите обучить животное новой команде? (Y/n) :  ");
+
         String ad = null;
         if (in.hasNextLine()) {
             ad = in.nextLine();
@@ -41,7 +42,14 @@ public class View {
                 studyId = in.nextInt();
             }
             System.out.println("Вот его параметры: ");
-            Controller.searchAnimalOnId(Controller.choice(),studyId);
+            Controller.searchAnimalOnId(Controller.choice(), studyId);
+
+            System.out.println("Введите номер новой команды для обучения: ");
+            int nw = 0;
+            if (in.hasNextInt()) {
+                nw = in.nextInt();
+            }
+            Controller.searchAndAddCommand(Controller.choice(), studyId, nw);
         }
 
         in.close();
