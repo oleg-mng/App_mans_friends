@@ -28,7 +28,7 @@ public class View {
 //            ComandForAnimal.getHmpCom();
         }
 
-        System.out.println("Хотите обучить животное новой команде? (Y/n) :  ");
+        System.out.println("Хотите обучить питомца новой команде? (Y/n) :  ");
 
         String ad = "";
         if (in.hasNext()) {
