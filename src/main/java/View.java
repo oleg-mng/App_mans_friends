@@ -1,4 +1,6 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class View {
@@ -49,6 +51,7 @@ public class View {
             }
             Controller.searchAndAddCommand(Controller.choice(), studyId, nw);
         }
+
         System.out.println("Сегодня мы можем добавить новое животное. Интересно? (Y/n) :  ");
         String anm = null;
         if (in.hasNextLine()) {
@@ -61,12 +64,41 @@ public class View {
                     anmId = in.nextInt();
                 }
                 System.out.println("Введите name нового животного:  ");
-                String anmName = null;
-                if (in.hasNextLine()) {
-                    anmName = in.nextLine();
+                String anmName = "";
+                if (in.hasNext()) {
+                    anmName = in.next();
                 }
+
+                System.out.println("Введите год рождения: ");
+                int year = 0;
+                if (in.hasNextInt()) {
+                    year = in.nextInt();
+                }
+                System.out.println("Введите месяц рождения рождения: ");
+                int month = 0;
+                if (in.hasNextInt()) {
+                    month = in.nextInt();
+                }
+                System.out.println("Введите день рождения рождения: ");
+                int day = 0;
+                if (in.hasNextInt()) {
+                    day = in.nextInt();
+                }
+                System.out.println("Введите класс, например pack(вьючное) ");
+                String cla = "";
+                if (in.hasNext()) {
+                    cla = in.next();
+                }
+
+                Controller.choice();
+                ArrayList<PackAnimal> dl = AddAnimal.addSomePetAnimal(Controller.choice(),anmId, anmName, LocalDate.of(year, month, day),
+                        cla, 5, new ArrayList<>(Arrays.asList(6, 6, 6)));
+                System.out.println("Новое животное добавлено:");
+                AddAnimal.printList(dl);
+                Controller.searchAnimalOnId(Controller.choice(), anmId);
             }
         }
+        System.out.println("Exit");
 
         in.close();
     }

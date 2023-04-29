@@ -18,9 +18,9 @@ public class AddAnimal {
 //        if (species == "pet" && numberAnimal == 1) arrayAnimal.add(new Cat(id, name, bornDate, species, cm));
 //        else if (species == "pet" && numberAnimal == 2) arrayAnimal.add(new Dog(id, name, bornDate, species, cm));
 //        else if (species == "pet" && numberAnimal == 3) arrayAnimal.add(new Hamster(id, name, bornDate, species, cm));
-        if (species == "pack" && numberAnimal == 4) arrayAnimal.add(new Horse(id, name, bornDate, species, cm));
-        else if (species == "pack" && numberAnimal == 5) arrayAnimal.add(new Camel(id, name, bornDate, species, cm));
-        else if (species == "pack" && numberAnimal == 6) arrayAnimal.add(new Donkey(id, name, bornDate, species, cm));
+        if (species.equals("pack") && numberAnimal == 4) arrayAnimal.add(new Horse(id, name, bornDate, species, cm));
+        else if (species.equals("pack") && numberAnimal == 5) arrayAnimal.add(new Camel(id, name, bornDate, species, cm));
+        else if (species.equals("pack") && numberAnimal == 6) arrayAnimal.add(new Donkey(id, name, bornDate, species, cm));
         else {
             System.out.println(id +"=id, по данному животному введите корректные параметры species: 'pet' или 'pack' и numberAnimal: 1...6");
         }

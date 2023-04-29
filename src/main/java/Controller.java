@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Controller {
 //    static int i = 1;
 
-    public static ArrayList<PackAnimal> run() {
+    public static ArrayList<PackAnimal> click() {
         ArrayList<PackAnimal> arrayAnimal = new ArrayList<>();
 
         AddAnimal.addSomePetAnimal(arrayAnimal, 1, "Aura", LocalDate.of(2018, 01, 22), "pack", 5, new ArrayList<>(Arrays.asList(1, 2, 3)));
@@ -53,5 +53,4 @@ public class Controller {
 
         return arrayAnimal;
     }
-
 }
