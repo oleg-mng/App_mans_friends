@@ -53,7 +53,7 @@ public class View {
         }
 
         System.out.println("Сегодня мы можем добавить новое животное. Интересно? (Y/n) :  ");
-        String anm = "";
+        String anm = null;
         if (in.hasNext()) {
             anm = in.next();
         }

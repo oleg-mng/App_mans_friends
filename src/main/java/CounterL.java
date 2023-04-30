@@ -25,5 +25,12 @@ public class CounterL {
             System.out.println("Нужно немного исправить");
         }
 
+//        try (Scanner in = new Scanner(new File("testRead.txt"));
+//             PrintWriter writer = new PrintWriter(new File("testWrite.txt"))) {
+//            while (scanner.hasNext()) {
+//                writer.print(scanner.nextLine());
+//            }
+//        }
+
     }
 }
