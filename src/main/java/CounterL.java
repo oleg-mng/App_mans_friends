@@ -12,17 +12,18 @@ public class CounterL {
         try (PrintWriter writer = new PrintWriter(new File("add.txt"))){
             i++;
             Controller.choice();
-            ArrayList<PackAnimal> dl = AddAnimal.addSomePetAnimal(Controller.choice(), i, "Reta",
-                    LocalDate.of(2013, 04, 04), "pack", 5,
+            ArrayList<MansFriend> dl = AddAnimal.addSomePetAnimal(Controller.choice(), i, "Reta",
+                    LocalDate.of(2013, 4, 4), "pack", 5,
                     new ArrayList<>(Arrays.asList(6, 7)));
-            System.out.println("Новое животное добавлено:");
+            System.out.println("Новый питомец id=" + i +" добавлен. Данные сохранены в файл add.txt");
+            System.out.println("Технология try-with-resources применена");
             AddAnimal.printList(dl);
-            for (PackAnimal packAnimal : dl) {
+            for (MansFriend packAnimal : dl) {
                 writer.println(packAnimal.getInfo());
             }
 
         } catch (IOException e){
-            System.out.println("Нужно немного исправить");
+            System.out.println("Нужно немного подождать/исправить");
         }
 
 //        try (Scanner in = new Scanner(new File("testRead.txt"));

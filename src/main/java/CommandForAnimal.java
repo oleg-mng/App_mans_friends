@@ -1,9 +1,9 @@
 import java.util.HashMap;
 import java.util.Map;
 
-class ComandForAnimal {
-    int n;
-    int com;
+class CommandForAnimal {
+//    int n;
+//    int com;
     static java.util.Map<Integer, String> hmpCom = new HashMap<>();
 
     public static Map<Integer, String> getHmpCom() {
@@ -26,7 +26,7 @@ class ComandForAnimal {
         return hmpCom;
     }
 
-    public static void addComandInMap(int q, String qv) {
+    public static void addCommandInMap(int q, String qv) {
 //        getHmpCom();
         if (!hmpCom.containsKey(q)) hmpCom.putIfAbsent(q, qv);
         else System.out.println("Данный номер #" + q +" уже занят, - введите альтенативный номер и команду");

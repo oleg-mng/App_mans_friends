@@ -8,7 +8,7 @@ public class Pet extends MansFriend{
     public List<Integer> cm;
 
     public Pet(int id, String name, LocalDate bornDate, String species, List<Integer> cm) {
-        super(id, name, bornDate);
+        super(id, name, bornDate, cm);
         this.species = species;
         this.cm = cm;
     }
@@ -16,6 +16,13 @@ public class Pet extends MansFriend{
     public String getSpecies() {
         return species;
     }
+
+
+
+    public List<Integer> getCm() {
+        return cm;
+    }
+
 
     @Override
     public String getInfo() {

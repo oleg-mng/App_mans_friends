@@ -24,7 +24,7 @@ public class View {
             System.out.println("Введите id команды, которую хотите добавить: ");
             int n = in.nextInt();
 
-            ComandForAnimal.addComandInMap(n, val);
+            CommandForAnimal.addCommandInMap(n, val);
 //            ComandForAnimal.getHmpCom();
         }
 
@@ -85,7 +85,7 @@ public class View {
                 if (in.hasNextInt()) {
                     day = in.nextInt();
                 }
-                System.out.println("Введите класс, например pack(вьючное) ");
+                System.out.println("Введите класс, pet(домашнее) или pack(вьючное) ");
                 String cla = "";
                 if (in.hasNext()) {
                     cla = in.next();
@@ -95,13 +95,18 @@ public class View {
                 if (in.hasNextInt()) {
                     cd = in.nextInt();
                 }
+                System.out.println("Введите номер вида питомца: 1...6 ");
+                int ls = 0;
+                if (in.hasNextInt()) {
+                    ls = in.nextInt();
+                }
 
-                Controller.choice();
-                ArrayList<PackAnimal> dl = AddAnimal.addSomePetAnimal(Controller.choice(),anmId, anmName, LocalDate.of(year, month, day),
-                        cla, 5, new ArrayList<>(Arrays.asList(cd)));
+//                Controller.choice();
+                ArrayList<MansFriend> dl = AddAnimal.addSomePetAnimal(Controller.choice(),anmId, anmName, LocalDate.of(year, month, day),
+                        cla, ls, new ArrayList<>(Arrays.asList(cd)));
                 System.out.println("Новое животное добавлено:");
                 AddAnimal.printList(dl);
-                Controller.searchAnimalOnId(Controller.choice(), anmId);
+//                Controller.searchAnimalOnId(Controller.choice(), anmId);
             }
 
         System.out.println("Exit");
